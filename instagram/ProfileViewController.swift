@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
         
         //returns to main view controller : "Login"
         DispatchQueue.main.async(execute: { () -> Void in
-            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginSegue")
             self.present(viewController, animated: true, completion: nil)
         })
         
