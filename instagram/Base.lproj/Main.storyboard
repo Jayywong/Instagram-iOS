@@ -113,13 +113,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fta-Zb-MX7">
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fta-Zb-MX7">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items/>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hy7-DH-EDl">
-                                <rect key="frame" x="0.0" y="13" width="375" height="605"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -176,7 +177,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hy7-DH-EDl" secondAttribute="trailing" id="d57-J2-eZZ"/>
                             <constraint firstAttribute="bottom" secondItem="hy7-DH-EDl" secondAttribute="bottom" constant="49" id="ekh-Z1-set"/>
-                            <constraint firstItem="hy7-DH-EDl" firstAttribute="top" secondItem="Ovn-Yw-UGS" secondAttribute="top" constant="13" id="s5W-ut-bhe"/>
+                            <constraint firstItem="hy7-DH-EDl" firstAttribute="top" secondItem="Ovn-Yw-UGS" secondAttribute="top" constant="28" id="s5W-ut-bhe"/>
                             <constraint firstItem="hy7-DH-EDl" firstAttribute="leading" secondItem="Ovn-Yw-UGS" secondAttribute="leading" id="ujU-7Q-bw9"/>
                         </constraints>
                     </view>
@@ -201,7 +202,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="V2A-Nt-RtC" kind="relationship" relationship="viewControllers" id="Qh7-uB-55N"/>
+                        <segue destination="V2A-Nt-RtC" kind="relationship" relationship="viewControllers" id="sMP-V5-f6y"/>
                         <segue destination="e7i-H4-fnk" kind="relationship" relationship="viewControllers" id="wIz-tn-76L"/>
                         <segue destination="zfK-5E-Whi" kind="relationship" relationship="viewControllers" id="H4K-Yb-xmT"/>
                     </connections>
@@ -237,13 +238,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0K-TW-HDv">
                                 <rect key="frame" x="23" y="62" width="328" height="223"/>
+                                <state key="normal" title="Click to add image"/>
                                 <connections>
                                     <action selector="addImageButtonClicked:" destination="e7i-H4-fnk" eventType="touchUpInside" id="dRu-Om-3tv"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="glQ-Or-Kct">
                                 <rect key="frame" x="23" y="62" width="328" height="223"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="328" id="V1x-Zm-9w6"/>
                                     <constraint firstAttribute="height" constant="223" id="ebP-fc-bKz"/>
@@ -271,12 +272,12 @@
                     <connections>
                         <outlet property="captionField" destination="PNu-n4-33s" id="rpv-2O-2hK"/>
                         <outlet property="imageToPost" destination="glQ-Or-Kct" id="eCf-6z-dPR"/>
-                        <segue destination="V2A-Nt-RtC" kind="presentation" identifier="PostSegue" id="hZg-DR-pnL"/>
+                        <segue destination="xTP-qC-W30" kind="presentation" identifier="homeSegue" id="qna-jz-IpV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTC-fW-f3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="800.14992503748135"/>
+            <point key="canvasLocation" x="1860" y="800"/>
         </scene>
     </scenes>
     <resources>
@@ -285,6 +286,6 @@
         <image name="Profile" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hZg-DR-pnL"/>
+        <segue reference="qna-jz-IpV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -40,11 +41,15 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func postImageButtonClicked(_ sender: Any) {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         Post.postUserImage(image: imageToPost.image, withCaption: captionField.text!) { (success: Bool, error: Error?) in
             if success
             {
                 print("posting image success")
-                self.performSegue(withIdentifier: "PostSegue", sender: nil)
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.performSegue(withIdentifier: "homeSegue", sender: nil)
                 
             } else
             {
@@ -63,7 +68,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         //let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-        //resize(image: originalImage, newSize: <#T##CGSize#>)
+        //resize(image: originalImage, newSize: )
         imageToPost.image = originalImage
         
         // Dismiss UIImagePickerController to go back to your original view controller
