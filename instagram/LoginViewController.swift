@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
             if user != nil{
                 print("login success")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }else
+            {
+                print(error?.localizedDescription)
             }
         }
     }

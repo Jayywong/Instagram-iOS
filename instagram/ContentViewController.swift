@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import Parse
 
-class ContentViewController: UIViewController {
+class ContentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var postTable: UITableView!
+    
+    var posts: [PFObject]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        postTable.delegate = self
+        postTable.dataSource = self
+        
+        retrievePost()
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +33,43 @@ class ContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func retrievePost()
+    {
+        let query = PFQuery(className: "Post")
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        query.findObjectsInBackground {(posts: [PFObject]?, error: Error?) in
+            if let posts = posts
+            {
+                print("success")
+                self.posts = posts
+                self.postTable.reloadData()
+            }else
+            {
+                print("failed to retrieve data : \(error?.localizedDescription)")
+                
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return posts?.count ?? 0
+    }
+    
+   
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = postTable.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        
+        cell.post = posts[indexPath.row]
+        
+        cell.selectionStyle = .none
+        
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation

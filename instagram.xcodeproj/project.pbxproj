@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96B217331E71DC7900283036 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B217321E71DC7900283036 /* Post.swift */; };
+		96B217371E725CEE00283036 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B217361E725CEE00283036 /* PostCell.swift */; };
 		96BCF8391E6E4DB3003A7CAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BCF8381E6E4DB3003A7CAF /* AppDelegate.swift */; };
 		96BCF83E1E6E4DB3003A7CAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BCF83C1E6E4DB3003A7CAF /* Main.storyboard */; };
 		96BCF8431E6E4DB3003A7CAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BCF8411E6E4DB3003A7CAF /* LaunchScreen.storyboard */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		31317737A40F49CE2962404D /* Pods_instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C069F3C4AD1E2D8F08924A /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
+		96B217321E71DC7900283036 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		96B217361E725CEE00283036 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		96BCF8351E6E4DB3003A7CAF /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BCF8381E6E4DB3003A7CAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96BCF83D1E6E4DB3003A7CAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +59,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		96B217311E71DC4F00283036 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96B217321E71DC7900283036 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		96B217341E725C8400283036 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				96DD195C1E7139CC00A5E004 /* PostViewController.swift */,
+				96DD195E1E7139F700A5E004 /* ProfileViewController.swift */,
+				96DD19541E712D3500A5E004 /* ContentViewController.swift */,
+				96DD19521E71244400A5E004 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		96B217351E725CCF00283036 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96B217361E725CEE00283036 /* PostCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		96BCF82C1E6E4DB2003A7CAF = {
 			isa = PBXGroup;
 			children = (
@@ -76,13 +107,12 @@
 		96BCF8371E6E4DB3003A7CAF /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				96B217311E71DC4F00283036 /* Model */,
+				96B217351E725CCF00283036 /* Views */,
+				96B217341E725C8400283036 /* ViewControllers */,
 				96BCF8381E6E4DB3003A7CAF /* AppDelegate.swift */,
 				96BCF83C1E6E4DB3003A7CAF /* Main.storyboard */,
 				96BCF8441E6E4DB3003A7CAF /* Info.plist */,
-				96DD19521E71244400A5E004 /* LoginViewController.swift */,
-				96DD19541E712D3500A5E004 /* ContentViewController.swift */,
-				96DD195C1E7139CC00A5E004 /* PostViewController.swift */,
-				96DD195E1E7139F700A5E004 /* ProfileViewController.swift */,
 				96DD195A1E71391600A5E004 /* Assets.xcassets */,
 				96BCF8411E6E4DB3003A7CAF /* LaunchScreen.storyboard */,
 			);
@@ -221,9 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B217371E725CEE00283036 /* PostCell.swift in Sources */,
 				96DD195D1E7139CC00A5E004 /* PostViewController.swift in Sources */,
 				96DD19531E71244400A5E004 /* LoginViewController.swift in Sources */,
 				96DD195F1E7139F700A5E004 /* ProfileViewController.swift in Sources */,
+				96B217331E71DC7900283036 /* Post.swift in Sources */,
 				96DD19551E712D3500A5E004 /* ContentViewController.swift in Sources */,
 				96BCF8391E6E4DB3003A7CAF /* AppDelegate.swift in Sources */,
 			);
